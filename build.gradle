@@ -1,5 +1,5 @@
 plugins {
-    id 'java'
+    id 'java-library'
 }
 
 group 'guru.qa'
@@ -16,6 +16,24 @@ dependencies {
     )
 }
 
+tasks.withType(JavaCompile){
+    options.encoding = 'UTF-8'
+}
+
 test {
     useJUnitPlatform()
+}
+
+help {
+    doFirst {
+        println ""
+        println "************************************************************************ "
+        println "***                                                                  *** "
+        println "*** Welcome to https://github.com/VolishevskiyVG/hw_automation-practice-form!   *** "
+        println "***                                                                  *** "
+        println "*** ./gradlew help                                                    *** "
+        println "***                                                                  *** "
+        println "************************************************************************ "
+        println ""
+    }
 }
